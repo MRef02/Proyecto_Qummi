@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tienda Quummi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2rem;
+    }
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 200px;
+      margin: 1rem;
+      padding: 1rem;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .card h3 {
+      margin: 0.5rem 0;
+    }
+    .btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    #carrito {
+      text-align: center;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bienvenido a la Tienda Quummi</h1>
+  </header>
+
+  <div class="productos">
+    <div class="card">
+      <img src="https://via.placeholder.com/200" alt="Producto 1">
+      <h3>Producto 1</h3>
+      <p>$10.00</p>
+      <button class="btn" onclick="agregarCarrito('Producto 1')">Agregar al carrito</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/200" alt="Producto 2">
+      <h3>Producto 2</h3>
+      <p>$15.00</p>
+      <button class="btn" onclick="agregarCarrito('Producto 2')">Agregar al carrito</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/200" alt="Producto 3">
+      <h3>Producto 3</h3>
+      <p>$20.00</p>
+      <button class="btn" onclick="agregarCarrito('Producto 3')">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <div id="carrito">
+    <h2>Carrito de compras</h2>
+    <ul id="lista-carrito"></ul>
+  </div>
+
+  <script>
+    function agregarCarrito(producto) {
+      const lista = document.getElementById('lista-carrito');
+      const item = document.createElement('li');
+      item.textContent = producto + " agregado al carrito.";
+      lista.appendChild(item);
+    }
+  </script>
+
+</body>
+</html>
